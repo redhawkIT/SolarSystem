@@ -1,16 +1,13 @@
 import {connect} from 'react-redux'
 import App from '../components/App'
-import {requestLogin} from '../actionCreators/loginActions'
-import {toggleSlideDrawer, setNavBarTitle} from '../actionCreators/UIActions'
-import {toggle} from '../actionCreators/contactSnackbarActions'
+import {toggleSlideDrawer} from '../actionCreators/UIActions'
+// import {toggle} from '../actionCreators/contactSnackbarActions'
 
-const mapStateToProps = (state) => ({...state.login, ...state.ui, ...state.contactSnackbar})
+const mapStateToProps = (state) => ({...state})
 
 export default connect(
   mapStateToProps, {
-    requestLogin,
     toggleSlideDrawer,
-    setNavBarTitle,
-    toggleSnackBar: toggle
+    // toggleSnackBar: toggle
   }
 )(App)
